@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Davide Mazzali</title>
+    <style>
+        :root {
+        --background: #f8f9fb;
+        --card-bg: #ffffff;
+        --text: #222222;
+        --muted: #555555;
+        --accent: #005bbb;
+        --link: #005bbb;
+        --link-hover: #003f80;
+        --border: #e0e3ea;
+        --max-width: 880px;
+        --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                    sans-serif;
+        }
+
+        * {
+        box-sizing: border-box;
+        }
+
+        body {
+        margin: 0;
+        padding: 0;
+        font-family: var(--font-main);
+        background-color: var(--background);
+        color: var(--text);
+        line-height: 1.6;
+        }
+
+        a {
+        color: var(--link);
+        text-decoration: none;
+        }
+
+        a:hover,
+        a:focus {
+        color: var(--link-hover);
+        text-decoration: underline;
+        }
+
+        .page {
+        max-width: var(--max-width);
+        margin: 2.5rem auto;
+        padding: 0 1.25rem 3rem;
+        }
+
+        header {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        padding: 1.75rem 1.5rem;
+        background-color: var(--card-bg);
+        border-radius: 10px;
+        border: 1px solid var(--border);
+        box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+        align-items: center;
+        }
+
+        .intro {
+        flex: 1 1 260px;
+        min-width: 0;
+        }
+
+        .intro h1 {
+        margin: 0 0 0.25rem;
+        font-size: 1.9rem;
+        }
+
+        .intro .tagline {
+        margin: 0 0 0.65rem;
+        font-size: 1.02rem;
+        color: var(--muted);
+        }
+
+        .intro .contact {
+        margin-top: 0.5rem;
+        font-size: 1.02rem;
+        font-weight: 600;
+        }
+
+        main {
+            margin-top: 1.75rem;
+        }
+
+        section {
+            margin-bottom: 1.75rem;
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            padding: 1.5rem 1.5rem 1.25rem;
+            box-shadow: 0 1px 3px rgba(15, 23, 42, 0.03);
+        }
+
+        section h2 {
+            margin-top: 0;
+            margin-bottom: 0.75rem;
+            font-size: 1.25rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.4rem;
+        }
+
+        #about p {
+            margin: 0 0 0.6rem;
+        }
+
+        #about p:last-child {
+            margin-bottom: 0;
+        }
+
+        #publications ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 0.25rem 0 0;
+        }
+
+        #publications li + li {
+            margin-top: 0.7rem;
+        }
+
+        .pub-title {
+            font-weight: 600;
+        }
+
+        .pub-meta {
+            font-size: 0.95rem;
+            color: var(--muted);
+        }
+
+        .conf {
+            font-size: 0.95rem;
+            margin-top: 0.1rem;
+        }
+
+        .pub-links-arxiv {
+            font-weight: 400;
+        }
+
+        footer {
+            margin-top: 1rem;
+            font-size: 0.8rem;
+            color: var(--muted);
+            text-align: right;
+        }
+        
+        .profile-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 2px solid var(--border);
+            overflow: hidden;
+        }
+
+        .profile-photo img {
+            width: 150%;
+            height: auto;
+            transform: translate(-40px, -50px);
+        }
+
+        p {
+            text-align: justify;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <header>
+            <div class="profile-photo">
+                <img src="profile_pic.jpg" alt="Portrait">
+            </div>
+            <div class="intro">
+                <h1>Davide Mazzali</h1>
+                
+                <p class="tagline"> PhD student in Computer Science @ EPFL, Switzerland </p>
+                <p class="contact">
+                    <span>davide [dot] mazzali [at] epfl [dot] ch</span>
+                </p>
+            </div>
+        </header>
+
+        <main>
+            <section id="about">
+                <h2>Bio</h2>
+                <p>
+                    I am a PhD student at EPFL, where I am fortunate to be advised by <a href="https://theory.epfl.ch/kapralov/" rel="noopener noreferrer">Michael Kapralov</a> and <a href="https://theory.epfl.ch/osven/"  rel="noopener noreferrer">Ola Svensson</a>.
+                </p>
+                <p>
+                    My research interests lie in theoretical computer science, more specifically in algorithms and complexity theory, with an emphasis on spectral graph theory, constraint satisfaction problems, convex programming hierarchies, and beyond-worst-case analysis.
+                </p>
+                <p>
+                    Before starting my PhD in February 2023, I obtained an MSc in Computer Science from EPFL in December 2022 and a BSc in Computer Science from the University of Trento in July 2020.
+                </p>
+            </section>
+
+            <section id="publications">
+            <h2>Publications</h2>
+            <ul>
+                <li>
+                    <div class="pub-title">
+                        Spectral Clustering with Side Information <span class="pub-links-arxiv">[<a href="https://arxiv.org/abs/2511.17326">arXiv</a>]</span>
+                    </div>
+                    <div class="pub-meta">
+                        with H. Fichtenberger, M. Kapralov, E. Kochetkova, S. Lattanzi, W. Wrzos-Kaminska.
+                    </div>
+                    <div class="conf">
+                        to appear in SODA 2026
+                    </div>
+                </li>
+                <li>
+                    <div class="pub-title">
+                        Min-CSPs on Complete Instances II: Polylogarithmic Approximation for Min-NAE-3-SAT <span class="pub-links-arxiv">[<a href="https://arxiv.org/abs/2504.19051">arXiv</a>]</span>
+                    </div>
+                    <div class="pub-meta">
+                        with A. Anand, E. Lee, A. Sharma.
+                    </div>
+                    <div class="conf">
+                        APPROX 2025
+                    </div>
+                </li>
+                <li>
+                    <div class="pub-title">
+                        On the Robustness of Spectral Algorithms for Semirandom Stochastic Block Models <span class="pub-links-arxiv">[<a href="https://arxiv.org/abs/2412.14315">arXiv</a>]</span>
+                    </div>
+                    <div class="pub-meta">
+                        with A. Bhaskara, A. Jha, M. Kapralov, N. Manoj, W. Wrzos-Kaminska.
+                    </div>
+                    <div class="conf">
+                        NeurIPS 2024
+                    </div>
+                </li>
+                <li>
+                    <div class="pub-title">
+                        On the Streaming Complexity of Expander Decomposition <span class="pub-links-arxiv">[<a href="https://arxiv.org/abs/2404.16701">arXiv</a>]</span>
+                    </div>
+                    <div class="pub-meta">
+                        with Y. Chen, M. Kapralov, M. Makarov.
+                    </div>
+                    <div class="conf">
+                        ICALP 2024
+                    </div>
+                </li>
+            </ul>
+            </section>
+
+            <section id="teaching">
+                <h2>Teaching</h2>
+                <ul>
+                    <li>CS-250 Algorithms I (EPFL): Spring 2024, Spring 2025.</li>
+                    <li>CS-450 Algorithms II (EPFL): Fall 2023, Fall 2024, Fall 2025.</li>
+                    <li>Virgilian Code (Scratch workshops at elementary and middle schools): 2016-2018.</li>
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            Last updated: December 2025
+        </footer>
+    </div>
+</body>
+
+</html>
