@@ -5,83 +5,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Davide Mazzali</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <style>
         :root {
-        --background: #f8f9fb;
-        --card-bg: #ffffff;
-        --text: #222222;
-        --muted: #555555;
-        --accent: #005bbb;
-        --link: #005bbb;
-        --link-hover: #003f80;
-        --border: #e0e3ea;
-        --max-width: 880px;
-        --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-                    sans-serif;
+            --background: #f8f9fb;
+            --card-bg: #ffffff;
+            --text: #222222;
+            --muted: #555555;
+            --accent: #005bbb;
+            --link: #005bbb;
+            --link-hover: #003f80;
+            --border: #e0e3ea;
+            --max-width: 880px;
+            --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                        sans-serif;
         }
 
         * {
-        box-sizing: border-box;
+            box-sizing: border-box;
         }
 
         body {
-        margin: 0;
-        padding: 0;
-        font-family: var(--font-main);
-        background-color: var(--background);
-        color: var(--text);
-        line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-main);
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.6;
         }
 
         a {
-        color: var(--link);
-        text-decoration: none;
+            color: var(--link);
+            text-decoration: none;
         }
 
         a:hover,
         a:focus {
-        color: var(--link-hover);
-        text-decoration: underline;
+            color: var(--link-hover);
+            text-decoration: underline;
         }
 
         .page {
-        max-width: var(--max-width);
-        margin: 2.5rem auto;
-        padding: 0 1.25rem 3rem;
+            max-width: var(--max-width);
+            margin: 2.5rem auto;
+            padding: 0 1.25rem 3rem;
         }
 
         header {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1.5rem;
-        padding: 1.75rem 1.5rem;
-        background-color: var(--card-bg);
-        border-radius: 10px;
-        border: 1px solid var(--border);
-        box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
-        align-items: center;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            padding: 1.75rem 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+            align-items: center;
         }
 
         .intro {
-        flex: 1 1 260px;
-        min-width: 0;
+            flex: 1 1 260px;
+            min-width: 0;
+            margin-top: 1rem;
         }
 
         .intro h1 {
-        margin: 0 0 0.25rem;
-        font-size: 1.9rem;
+            margin: 0 0 0.25rem;
+            font-size: 1.9rem;
         }
 
         .intro .tagline {
-        margin: 0 0 0.65rem;
-        font-size: 1.02rem;
-        color: var(--muted);
+            margin: 0 0 0.65rem;
+            font-size: 1.02rem;
+            color: var(--muted);
         }
 
         .intro .contact {
-        margin-top: 0.5rem;
-        font-size: 1.02rem;
-        font-weight: 600;
+            margin-top: 0.5rem;
+            font-size: 1.02rem;
+            font-weight: 600;
         }
 
         main {
@@ -165,8 +167,56 @@
         p {
             text-align: justify;
         }
+
+        .profile-links {
+            margin-top: 0.3rem;
+            font-size: 0.95rem;
+        }
+
+        .profile-links a {
+            margin-right: 0.8rem;
+            font-weight: 500;
+        }
+
+        .email-slot {
+            margin-top: 0.35rem;
+            height: 1.4rem;
+            position: relative;
+        }
+
+        #email-address {
+            font-size: 0.95rem;
+            color: var(--muted);
+            line-height: 1.4rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            transition: opacity 0.15s ease-in-out;
+        }
+
+        #email-address.email-hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
     </style>
 </head>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const toggle = document.getElementById("email-toggle");
+        const email = document.getElementById("email-address");
+
+        if (!toggle || !email) {
+            return;
+        }
+
+        toggle.addEventListener("click", function (e) {
+            e.preventDefault();
+            email.classList.toggle("email-hidden");
+        });
+    });
+</script>
 
 <body>
     <div class="page">
@@ -178,9 +228,19 @@
                 <h1>Davide Mazzali</h1>
                 
                 <p class="tagline"> PhD student in Computer Science @ EPFL, Switzerland </p>
-                <p class="contact">
-                    <span>davide [dot] mazzali [at] epfl [dot] ch</span>
-                </p>
+                <div class="profile-links">
+                    <a href="#" id="email-toggle">Email</a>
+                    <a href="https://scholar.google.com/citations?hl=en&user=hbYohLgAAAAJ&view_op=list_works&sortby=pubdate"
+                    rel="noopener noreferrer">Google Scholar</a>
+                    <a href="https://dblp.org/pid/376/9528.html"
+                    rel="noopener noreferrer">DBLP</a>
+                </div>
+
+                <div class="email-slot">
+                    <div id="email-address" class="email-hidden">
+                        davide [dot] mazzali [at] epfl [dot] ch
+                    </div>
+                </div>
             </div>
         </header>
 
@@ -191,7 +251,7 @@
                     I am a PhD student at EPFL, where I am fortunate to be advised by <a href="https://theory.epfl.ch/kapralov/" rel="noopener noreferrer">Michael Kapralov</a> and <a href="https://theory.epfl.ch/osven/"  rel="noopener noreferrer">Ola Svensson</a>.
                 </p>
                 <p>
-                    My research interests lie in theoretical computer science, more specifically in algorithms and complexity theory, with an emphasis on spectral graph theory, constraint satisfaction problems, convex programming hierarchies, and beyond-worst-case analysis.
+                    My research interests lie in theoretical computer science, more specifically algorithms and complexity theory, with an emphasis on spectral graph theory, constraint satisfaction problems, convex programming hierarchies, and beyond-worst-case analysis.
                 </p>
                 <p>
                     Before starting my PhD in February 2023, I obtained an MSc in Computer Science from EPFL in December 2022 and a BSc in Computer Science from the University of Trento in July 2020.
